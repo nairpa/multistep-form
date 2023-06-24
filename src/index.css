@@ -3,5 +3,25 @@
 @tailwind utilities;
 
 :root {
+  /* Colors */
+  --primary-blue: hsl(213, 96%, 18%);
+  --primary-purple: hsl(243, 100%, 62%);
+  --primary-pastel-blue: hsl(228, 100%, 84%);
+  --primary-light-blue: hsl(206, 94%, 87%);
+  --primary-straberry-red: hsl(354, 84%, 57%);
 
+  --base-cool-gray: hsl(231, 11%, 63%);
+  --base-light-gray: hsl(229, 24%, 87%);
+  --base-magnolia: hsl(217, 100%, 97%);
+  --base-alabaster: hsl(231, 100%, 99%);
+  --base-white: hsl(0, 0%, 100%);
+
+  /* Typography */
+  --font-size: 16px;
+  --font: 'Ubuntu', sans-serif;
+  --font-light: 400;
+  --font-medium: 500;
+  --font-bold: 700; 
+
+  font-family: var(--font);
 }

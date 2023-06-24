@@ -1,0 +1,24 @@
+.heading {
+    font-size: 36px;
+    font-weight: var(--font-bold);
+}
+
+.body {
+    font-size: var(--font-size);   
+}
+
+.primary {
+    color: var(--primary-blue)
+}
+
+.secondary {
+    color:  var(--base-cool-gray);
+}
+
+.error {
+    color: var(--primary-straberry-red)
+}
+
+.light {
+    color: var(--base-white);
+}

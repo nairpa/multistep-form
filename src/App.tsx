@@ -1,9 +1,11 @@
+import { Step } from "./components/step/Step"
+
 function App() {
 
   return (
     <>
-      <div className="font-bold">
-        Hola
+      <div className="bg-indigo-500">
+        <Step />
        </div>
     </>
   )
