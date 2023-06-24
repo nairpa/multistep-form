@@ -1,11 +1,11 @@
-import { Input } from "./components/input/Input"
+import { Button } from "./components/button/Button"
 
 function App() {
 
   return (
     <>
       <div>
-        <Input label="Name"/>
+        <Button text="Next step"/>
        </div>
     </>
   )
