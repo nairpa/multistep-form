@@ -9,7 +9,6 @@ export const Step = () => {
                 <Text content="STEP 1" color="secondary" />
                 <Text content="YOUR INFO" color="light" bold/>
             </span>
-
         </div>
     )
 }

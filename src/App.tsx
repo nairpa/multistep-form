@@ -1,11 +1,11 @@
-import { Step } from "./components/step/Step"
+import { Input } from "./components/input/Input"
 
 function App() {
 
   return (
     <>
-      <div className="bg-indigo-500">
-        <Step />
+      <div>
+        <Input label="Name"/>
        </div>
     </>
   )

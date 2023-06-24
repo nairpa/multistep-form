@@ -1,10 +1,14 @@
-.heading {
+.lg {
     font-size: 36px;
     font-weight: var(--font-bold);
 }
 
-.body {
+.md {
     font-size: var(--font-size);   
+}
+
+.sm {
+    font-size: 14px;
 }
 
 .primary {

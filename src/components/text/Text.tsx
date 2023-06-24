@@ -1,14 +1,14 @@
 import './Text.css';
 
 type TextProps = {
-    content: string,
-    type?: 'heading' | 'body',
+    content?: string,
     bold?: boolean,
-    color?: 'primary' | 'secondary' | 'light' | 'error'
+    color?: 'primary' | 'secondary' | 'light' | 'error',
+    size?: 'sm' | 'md' | 'lg'
 }
 
-export const Text = ({content, type="body", bold, color="primary"}: TextProps) => {
+export const Text = ({content, size="md", bold, color="primary"}: TextProps) => {
     return (
-        <span className={`${type} ${bold ? 'font-bold' : ''} ${color}`}>{content}</span>
+        <span className={`${size} ${bold ? 'font-bold' : ''} ${color}`}>{content}</span>
     )
 }
