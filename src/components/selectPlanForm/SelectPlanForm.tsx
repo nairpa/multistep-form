@@ -1,4 +1,5 @@
 import { Card } from "../card/Card"
+import { Switch } from "../switch/Switch"
 
 const cards = [
     {
@@ -24,8 +25,12 @@ const cards = [
 
 export const SelectPlanForm = () => {
     return (
-        <div className="flex gap-4">
-            { cards.map(({id, img, title, price}) => <Card key={id} img={img} title={title} price={price} />)}
-        </div>
+        <>
+            <div className="flex gap-4">
+                { cards.map(({id, img, title, price}) => <Card key={id} img={img} title={title} price={price} />)}
+            </div>
+            <Switch label="Monthly" />        
+        </>
+
     )
 }
