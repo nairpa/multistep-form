@@ -1,12 +1,10 @@
-import { Button } from "./components/button/Button"
+import { Stepper } from "./components/stepper/Stepper"
 
 function App() {
 
   return (
     <>
-      <div>
-        <Button text="Next step"/>
-       </div>
+      <Stepper />
     </>
   )
 }
