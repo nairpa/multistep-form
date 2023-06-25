@@ -1,5 +1,6 @@
 import { Button } from "../button/Button"
-import { Input } from "../input/Input"
+import { PersonaInfoForm } from "../personalInfoForm/PersonaInfoForm"
+import { SelectPlanForm } from "../selectPlanForm/SelectPlanForm"
 import { Stepper } from "../stepper/Stepper"
 import { Text } from "../text/Text"
 
@@ -12,12 +13,13 @@ export const Form = () => {
                     <Text size="lg" content="Personal info" />
                     <Text color="secondary" content="Please provide your name, email adredd, and phone number."/>
                 </div>
-                <form className="flex flex-col gap-4">
-                    <Input label="Name" fullWidth/>
-                    <Input label="Email" fullWidth/>
-                    <Input label="Phone number" fullWidth/>
-                </form>
-                <Button text='Next step' customClass="self-end" />
+                
+                <div className="flex flex-col justify-between h-full">
+                    <form className="flex flex-col gap-4">
+                       <SelectPlanForm />
+                    </form>
+                    <Button text='Next step' customClass="self-end" />
+                </div>    
             </div>
         </div>
     )

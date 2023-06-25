@@ -1,0 +1,11 @@
+.card-container {
+    transition: all 0.2s ease-in-out;
+}
+
+.card-container:hover {
+    border-color: var(--primary-purple);
+}
+
+.card-container.selected {
+    background-color: var(--base-magnolia);
+}
