@@ -1,3 +1,4 @@
+import { AddonsForm } from "../addonsForm/AddonsForm"
 import { Button } from "../button/Button"
 import { PersonaInfoForm } from "../personalInfoForm/PersonaInfoForm"
 import { SelectPlanForm } from "../selectPlanForm/SelectPlanForm"
@@ -16,7 +17,7 @@ export const Form = () => {
                 
                 <div className="flex flex-col justify-between h-full">
                     <form className="flex flex-col gap-4">
-                       <SelectPlanForm />
+                       <AddonsForm />
                     </form>
                     <Button text='Next step' customClass="self-end" />
                 </div>    

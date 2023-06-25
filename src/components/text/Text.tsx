@@ -3,7 +3,7 @@ import './Text.css';
 type TextProps = {
     content?: string,
     bold?: boolean,
-    color?: 'primary' | 'secondary' | 'light' | 'error',
+    color?: 'primary' | 'secondary' | 'light' | 'error' | 'accent',
     size?: 'sm' | 'md' | 'lg'
 }
 

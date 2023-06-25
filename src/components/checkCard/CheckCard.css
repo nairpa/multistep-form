@@ -1,0 +1,8 @@
+.checkcard-container {
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+.checkcard-container:hover {
+    border-color: var(--primary-purple);
+}
