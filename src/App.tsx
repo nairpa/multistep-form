@@ -1,10 +1,10 @@
-import { Stepper } from "./components/stepper/Stepper"
+import { Form } from "./components/form/Form"
 
 function App() {
 
   return (
     <>
-      <Stepper />
+      <Form />
     </>
   )
 }
