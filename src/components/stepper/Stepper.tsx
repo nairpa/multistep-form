@@ -26,7 +26,7 @@ const steps = [
 
 export const Stepper = () => {
     return (
-        <div className="stepper flex flex-col gap-8 p-8">
+        <div className="stepper md:rounded-lg flex md:flex-col gap-8 p-8">
             { steps.map(({step, name, id}) => <Step key={id} id={id} step={step} name={name}/>) }
         </div>
     )

@@ -2,4 +2,18 @@
     height: 568px;
     width: 274px;
     background-image: url('../../../assets/images/bg-sidebar-desktop.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media(max-width: 768px) {
+    .stepper {
+        margin-top: 2.5em;
+        height: 160px;
+        width: 100%;
+        background-image: url('../../../assets/images/bg-sidebar-mobile.svg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        justify-content: center;
+    }
 }
