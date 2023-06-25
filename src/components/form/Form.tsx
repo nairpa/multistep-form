@@ -3,6 +3,7 @@ import { Button } from "../button/Button"
 import { PersonaInfoForm } from "../personalInfoForm/PersonaInfoForm"
 import { SelectPlanForm } from "../selectPlanForm/SelectPlanForm"
 import { Stepper } from "../stepper/Stepper"
+import { SummaryForm } from "../summaryForm/SummaryForm"
 import { Text } from "../text/Text"
 
 export const Form = () => {
@@ -17,7 +18,7 @@ export const Form = () => {
                 
                 <div className="flex flex-col justify-between h-full">
                     <form className="flex flex-col gap-4">
-                       <AddonsForm />
+                       <SummaryForm />
                     </form>
                     <Button text='Next step' customClass="self-end" />
                 </div>    
