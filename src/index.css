@@ -41,3 +41,12 @@ body, #root {
   justify-content: center;
   background-color: var(--base-magnolia);
 }
+
+@media(max-width: 768px) {
+  #root {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--base-magnolia);
+  }
+}
