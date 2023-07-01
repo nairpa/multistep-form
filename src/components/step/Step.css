@@ -1,0 +1,4 @@
+.active .step {
+    background-color: var(--primary-light-blue);
+    color: black;
+}
