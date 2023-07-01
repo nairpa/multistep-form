@@ -1,6 +1,7 @@
+import { IStep } from "../../models/Step.model"
 import { Input } from "../input/Input"
 
-export const PersonaInfoForm = () => {
+export const PersonaInfoForm = (props: any) => {
     return (
         <>
             <Input label="Name" fullWidth/>

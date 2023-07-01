@@ -1,3 +1,4 @@
+import { IStep } from "../../models/Step.model";
 import { Card } from "../card/Card"
 import { Switch } from "../switch/Switch"
 import "./SelectPlanForm.css";
@@ -24,7 +25,7 @@ const cards = [
 
 ]
 
-export const SelectPlanForm = () => {
+export const SelectPlanForm = (props: any) => {
     return (
         <>
             <div className="flex gap-4">

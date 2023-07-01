@@ -1,7 +1,7 @@
 import { Text } from "../text/Text"
 import './SummaryForm.css';
 
-export const SummaryForm = () => {
+export const SummaryForm = (props: any) => {
     return (
         <>
             <div className="p-6 summary-container flex flex-col rounded-lg">

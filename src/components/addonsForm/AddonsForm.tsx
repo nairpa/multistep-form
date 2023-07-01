@@ -1,3 +1,4 @@
+import { IStep } from "../../models/Step.model"
 import { CheckCard } from "../checkCard/CheckCard"
 
 const addons = [
@@ -21,7 +22,7 @@ const addons = [
     }
 ]
 
-export const AddonsForm = () => {
+export const AddonsForm = (props: any) => {
     return (
         <>
             { addons.map(({id, ...rest}) => <CheckCard key={id} {...rest} />)}
