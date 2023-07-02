@@ -7,14 +7,14 @@ interface InputProps extends React.HTMLProps<HTMLInputElement> {
     fullWidth?: boolean,
 }
 
-export const Input = ({label='label', error, fullWidth, ...rest}: InputProps) => {
+export const Input = React.forwardRef(function input({label='label', error, fullWidth, ...rest}: InputProps, ref: any) {
     return (
         <div className={`${fullWidth ? 'w-full' : 'w-max'}`}>
             <div className="flex items-center justify-between">
                 <Text content={label} />
                 <Text content={error} size="sm" color="error" bold/>
             </div>
-            <input className={`${fullWidth ? 'w-full' : 'w-max'} border rounded-md h-9 px-2 block leading-2`} {...rest} />
+            <input ref={ref} className={`${fullWidth ? 'w-full' : 'w-max'} border rounded-md h-9 px-2 block leading-2`} {...rest} />
         </div>
     )
-}
+})

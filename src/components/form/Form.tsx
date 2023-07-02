@@ -60,9 +60,9 @@ export const Form = ({ children }: React.PropsWithChildren) => {
                             </div>
                 
                             <div className="flex flex-col justify-between h-full gap-6">
-                                <form className="flex flex-col gap-4">
+                                <div className="flex flex-col gap-4">
                                     { child }
-                                </form>
+                                </div>
                                 { formAction() }
                             </div>    
                         </div>

@@ -3,11 +3,12 @@ import { Form } from "./components/form/Form"
 import { PersonaInfoForm } from "./components/personalInfoForm/PersonaInfoForm"
 import { SelectPlanForm } from "./components/selectPlanForm/SelectPlanForm"
 import { SummaryForm } from "./components/summaryForm/SummaryForm"
+import { FormProvider } from "./context/FormContext"
 
 function App() {
 
   return (
-    <>
+    <FormProvider>
       <Form>
         <PersonaInfoForm 
           name="YOUR INFO" 
@@ -30,7 +31,7 @@ function App() {
           description="Double-check everything looks OK before confirming."
         />
       </Form>
-    </>
+    </FormProvider>
   )
 }
 
