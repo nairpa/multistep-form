@@ -1,5 +1,9 @@
+input[type="radio"] {
+}
+
 .card-container {
     transition: all 0.2s ease-in-out;
+    cursor: pointer;
 }
 
 .card-container:hover {

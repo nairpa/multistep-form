@@ -53,15 +53,8 @@ export const Form = ({ children }: React.PropsWithChildren) => {
     }
 
     const onSubmit = (data: any) => {
-        console.log('submit')
-        console.log(data)
         updateForm(data);
         handleNext();
-    }
-
-    const isInvalid = (data: any) => {
-        console.log(data),
-        console.log(errors)
     }
 
     const activeForm = () => {
@@ -76,7 +69,7 @@ export const Form = ({ children }: React.PropsWithChildren) => {
                             </div>
                     
                             <div className="flex flex-col justify-between h-full gap-6">
-                                <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit, isInvalid)}>
+                                <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
                                     { React.createElement(child.type, {
                                         ...{
                                             ...child.props,

@@ -1,11 +1,6 @@
-import { useForm } from "react-hook-form"
 import { Input } from "../input/Input"
-import { useEffect } from "react"
 
 export const PersonaInfoForm = (props: any) => {
-    useEffect(() => {
-        console.log(props.errors)
-    })
     return (
         <>
             <Input 

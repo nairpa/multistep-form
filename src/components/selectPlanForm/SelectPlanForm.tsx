@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { IStep } from "../../models/Step.model";
 import { Card } from "../card/Card"
 import { Switch } from "../switch/Switch"
@@ -26,10 +27,17 @@ const cards = [
 ]
 
 export const SelectPlanForm = (props: any) => {
+
     return (
         <>
             <div className="cards-container flex gap-4">
-                { cards.map(({id, img, title, price}) => <Card key={id} img={img} title={title} price={price} />)}
+                { cards.map(({id, img, title, price}) => <Card 
+                    {...props.register(title.toLowerCase())}  
+                    key={id} 
+                    img={img} 
+                    title={title} 
+                    price={price}
+                />)}
             </div>
             <div className="switch-container flex justify-center p-4 rounded-lg">
                 <Switch labelCheck="Monthly" labelUncheck="Yearly"  />        
