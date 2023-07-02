@@ -1,3 +1,11 @@
+input {
+    transition: 0.2s all ease-in-out;
+}
+
 input:focus {
     outline-color: var(--primary-purple);
+}
+
+input[aria-invalid="true"] {
+    outline: 1px solid var(--primary-straberry-red);
 }

@@ -1,10 +1,14 @@
+import { useForm } from "react-hook-form";
 import { IStep } from "../../models/Step.model";
 import { Button } from "../button/Button"
 import { Stepper } from "../stepper/Stepper"
 import { Text } from "../text/Text"
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useFormContext } from "../../context/FormContext";
 
 export const Form = ({ children }: React.PropsWithChildren) => {
+    const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onSubmit' });
+    const { updateForm } = useFormContext();
     const [ step, setStep ] = useState(1);
     const [ steps, setSteps ] = useState<IStep[]>([]);
 
@@ -48,6 +52,18 @@ export const Form = ({ children }: React.PropsWithChildren) => {
         console.log('confirm')
     }
 
+    const onSubmit = (data: any) => {
+        console.log('submit')
+        console.log(data)
+        updateForm(data);
+        handleNext();
+    }
+
+    const isInvalid = (data: any) => {
+        console.log(data),
+        console.log(errors)
+    }
+
     const activeForm = () => {
         return (
             (children as React.ReactElement[]).map((child, i) => {
@@ -58,12 +74,19 @@ export const Form = ({ children }: React.PropsWithChildren) => {
                                 <Text size="lg" customClass="pb-2" content={child.props.title} />
                                 <Text color="secondary" content={child.props.description}/>
                             </div>
-                
+                    
                             <div className="flex flex-col justify-between h-full gap-6">
-                                <div className="flex flex-col gap-4">
-                                    { child }
-                                </div>
-                                { formAction() }
+                                <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit, isInvalid)}>
+                                    { React.createElement(child.type, {
+                                        ...{
+                                            ...child.props,
+                                            register: register,
+                                            errors: errors,
+                                            key: child.props.id
+                                        }
+                                    }) }
+                                    { formAction() }
+                                </form>
                             </div>    
                         </div>
                     )
@@ -76,7 +99,7 @@ export const Form = ({ children }: React.PropsWithChildren) => {
         if(isFirst()) {
             return (
                 <>
-                    <Button text='Next step' customClass="self-end" onClick={handleNext} />
+                    <Button type="submit" text='Next step' customClass="self-end" />
                 </>
             )
         }

@@ -12,9 +12,14 @@ export const Input = React.forwardRef(function input({label='label', error, full
         <div className={`${fullWidth ? 'w-full' : 'w-max'}`}>
             <div className="flex items-center justify-between">
                 <Text content={label} />
-                <Text content={error} size="sm" color="error" bold/>
+                <Text content={error} size="sm" color="error" bold aria-errormessage/>
             </div>
-            <input ref={ref} className={`${fullWidth ? 'w-full' : 'w-max'} border rounded-md h-9 px-2 block leading-2`} {...rest} />
+            <input 
+                ref={ref} 
+                aria-invalid={!!error}
+                className={`${fullWidth ? 'w-full' : 'w-max'} border rounded-md h-9 px-2 block leading-2`} 
+                {...rest} 
+            />
         </div>
     )
 })

@@ -1,20 +1,34 @@
 import { useForm } from "react-hook-form"
 import { Input } from "../input/Input"
-import { useFormContext } from "../../context/FormContext";
+import { useEffect } from "react"
 
 export const PersonaInfoForm = (props: any) => {
-    const { register, handleSubmit } = useForm();
-    const { updateForm } = useFormContext();
-
-    const onSubmit = (data: any) => {
-        console.log(data)
-        updateForm(data);
-    }
+    useEffect(() => {
+        console.log(props.errors)
+    })
     return (
-        <form className="flex flex-col gap-4" onSubmit={handleSubmit(onSubmit)}>
-            <Input {...register('name')} label="Name" id="name" fullWidth/>
-            <Input {...register('email')} label="Email" id="email" fullWidth/>
-            <Input {...register('phone')} label="Phone number" id="phone" fullWidth/>
-        </form>
+        <>
+            <Input 
+                {...props.register('name', { required: "The field is required" })} 
+                error={props?.errors['name']?.message} 
+                label="Name" 
+                id="name" 
+                fullWidth
+            />
+            <Input 
+                {...props.register('email', { required: "The field is required" })} 
+                error={props?.errors['email']?.message} 
+                label="Email" 
+                id="email" 
+                fullWidth
+            />
+            <Input 
+                {...props.register('phone', { required: "The field is required" })} 
+                error={props?.errors['phone']?.message} 
+                label="Phone number" 
+                id="phone" 
+                fullWidth
+            />
+        </>
     )
 }
