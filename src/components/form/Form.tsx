@@ -84,8 +84,8 @@ export const Form = ({ children }: React.PropsWithChildren) => {
         if(!isFirst() && !isLast()) {
             return (
                 <div className="w-full flex justify-between">
-                    <Button text="Go Back" onClick={handleBack} />
-                    <Button text='Next step' customClass="self-end" onClick={handleNext} />
+                    <Button text="Go Back" onClick={handleBack} color="secondary" />
+                    <Button type="submit" text='Next step' customClass="self-end" onClick={handleNext} />
                 </div>
             )
         }
@@ -93,8 +93,8 @@ export const Form = ({ children }: React.PropsWithChildren) => {
         if(isLast()) {
             return (
                 <div className="w-full flex justify-between">
-                    <Button text="Go Back" onClick={handleBack} />
-                    <Button text='Confirm' customClass="self-end" onClick={handleConfirm} />
+                    <Button text="Go Back" onClick={handleBack} color="secondary" />
+                    <Button type="submit" text='Confirm' customClass="self-end" onClick={handleConfirm} />
                 </div>
             )
         }

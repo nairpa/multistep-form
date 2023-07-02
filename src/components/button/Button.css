@@ -1,4 +1,16 @@
 .action-btn {
-    background-color: var(--primary-blue);
     transition: all 0.2s ease-in-out;
+}
+
+button.primary {
+    background-color: var(--primary-blue);
+}
+
+button.secondary {
+    background-color: transparent;
+    color: var(--primary-blue);
+}
+
+button[type="submit"] {
+    background-color: var(--primary-blue);
 }
