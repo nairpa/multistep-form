@@ -55,11 +55,11 @@ export const Form = ({ children }: React.PropsWithChildren) => {
                     return (
                         <div className="flex flex-col gap-6 py-8 px-12 md:mt-0 -mt-16 bg-white rounded-lg m-4 md:min-w-[540px]">
                             <div className="flex flex-col leading-8">
-                                <Text size="lg" content={child.props.title} />
+                                <Text size="lg" customClass="pb-2" content={child.props.title} />
                                 <Text color="secondary" content={child.props.description}/>
                             </div>
                 
-                            <div className="flex flex-col justify-between h-full">
+                            <div className="flex flex-col justify-between h-full gap-6">
                                 <form className="flex flex-col gap-4">
                                     { child }
                                 </form>

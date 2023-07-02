@@ -28,7 +28,7 @@ const cards = [
 export const SelectPlanForm = (props: any) => {
     return (
         <>
-            <div className="flex gap-4">
+            <div className="cards-container flex gap-4">
                 { cards.map(({id, img, title, price}) => <Card key={id} img={img} title={title} price={price} />)}
             </div>
             <div className="switch-container flex justify-center p-4 rounded-lg">

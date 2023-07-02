@@ -1,3 +1,9 @@
 .switch-container {
     background-color: var(--base-magnolia);
 }
+
+@media(max-width: 768px) {
+    .cards-container {
+        flex-direction: column;
+    }
+}

@@ -10,7 +10,7 @@ type CardProps = {
 
 export const Card = ({ img, title, price, selected }: CardProps) => {
     return (
-        <div className={`${selected ? 'selected' : ''} card-container border rounded-md p-4 h-40 w-full flex justify-between flex-col`}>
+        <div className={`${selected ? 'selected' : ''} card-container border rounded-md p-4 md:h-40 w-full flex justify-between md:flex-col`}>
             <div className="rounded-full object-contain">
                 <img src={img}></img>
             </div>
