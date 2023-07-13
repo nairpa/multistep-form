@@ -7,7 +7,10 @@ import React, { useState, useEffect } from 'react';
 import { useFormContext } from "../../context/FormContext";
 
 export const Form = ({ children }: React.PropsWithChildren) => {
-    const { register, handleSubmit, formState: { errors } } = useForm({ mode: 'onSubmit' });
+    const { register, handleSubmit, watch, formState: { errors }} = useForm({ 
+        mode: 'onSubmit', 
+        defaultValues: { plan: 'arcade' } 
+    });
     const { updateForm } = useFormContext();
     const [ step, setStep ] = useState(1);
     const [ steps, setSteps ] = useState<IStep[]>([]);
@@ -73,6 +76,7 @@ export const Form = ({ children }: React.PropsWithChildren) => {
                                     { React.createElement(child.type, {
                                         ...{
                                             ...child.props,
+                                            watch,
                                             register: register,
                                             errors: errors,
                                             key: child.props.id
