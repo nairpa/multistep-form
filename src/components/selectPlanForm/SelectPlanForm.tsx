@@ -1,9 +1,7 @@
 import { useEffect, useState } from 'react';
-import { IStep } from "../../models/Step.model";
 import { Card } from "../card/Card"
 import { Switch } from "../switch/Switch"
 import "./SelectPlanForm.css";
-import { useForm } from 'react-hook-form';
 
 const cards = [
     {
@@ -31,9 +29,8 @@ export const SelectPlanForm = (props: any) => {
     const [ monthly, setMonthly] = useState(false);
 
     useEffect(() => {
-        const subscription = props.watch((value: any, { name, type }: any) => {
+        const subscription = props.watch((value: any) => {
             setMonthly(value.monthly)
-            console.log(value, name, type)
         })
         return () => subscription.unsubscribe()
     }, [props.watch])
@@ -53,7 +50,7 @@ export const SelectPlanForm = (props: any) => {
                 />)}
             </div>
             <div className="switch-container flex justify-center p-4 rounded-lg">
-                <Switch {...props.register('monthly')} id="monthly" isChecked={monthly} labelCheck="Monthly" labelUncheck="Yearly" />        
+                <Switch {...props.register('yearly')} id="yearly" isChecked={monthly} labelCheck="Monthly" labelUncheck="Yearly" />        
             </div>
         </>
 
