@@ -8,33 +8,49 @@ const cards = [
         id: 1,
         img: './assets/images/icon-arcade.svg',
         title: 'Arcade',
-        price: '$9/mo'
+        price: {
+            yearly: 30,
+            monthly: 10,
+        }
     },
     {
         id: 2,
         img: './assets/images/icon-advanced.svg',
         title: 'Advanced',
-        price: '$12/mo',
+        price: {
+            yearly: 35,
+            monthly: 15,
+        }
     },
     {
         id: 3,
         img: './assets/images/icon-pro.svg',
         title: 'Pro',
-        price: '$15/mo'
+        price: {
+            yearly: 40,
+            monthly: 20,
+        }
     }
 
 ]
 
 export const SelectPlanForm = (props: any) => {
-    const [ monthly, setMonthly] = useState(false);
+    const [ yearly, setYearly] = useState(false);
 
     useEffect(() => {
         const subscription = props.watch((value: any) => {
-            setMonthly(value.monthly)
+            setYearly(value.yearly)
         })
         return () => subscription.unsubscribe()
     }, [props.watch])
 
+    const getPrice = (price: { yearly: number, monthly: number}) => {
+        if(yearly) {
+            return `+${price.yearly}/yr`
+        } else {
+            return `+${price.monthly}/mo`
+        }
+    }
     return (
         <>
             <div className="cards-container flex gap-4">
@@ -42,7 +58,7 @@ export const SelectPlanForm = (props: any) => {
                     key={id} 
                     img={img} 
                     title={title} 
-                    price={price}
+                    price={getPrice(price)}
                     error={props?.errors['name']?.message} 
                     id={title.toLowerCase()}
                     value={title.toLowerCase()} 
@@ -50,7 +66,7 @@ export const SelectPlanForm = (props: any) => {
                 />)}
             </div>
             <div className="switch-container flex justify-center p-4 rounded-lg">
-                <Switch {...props.register('yearly')} id="yearly" isChecked={monthly} labelCheck="Monthly" labelUncheck="Yearly" />        
+                <Switch {...props.register('yearly')} id="yearly" isChecked={yearly} labelCheck="Monthly" labelUncheck="Yearly" />        
             </div>
         </>
 
