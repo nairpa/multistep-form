@@ -9,6 +9,7 @@ interface SwitchProps extends React.HTMLProps<HTMLInputElement> {
 }
 
 export const Switch = React.forwardRef(function swtich({ labelCheck, labelUncheck, isChecked, ...rest}: SwitchProps, ref: any) {
+    
     return (
         <div className="flex gap-4">
             <Text content={labelCheck} bold={!isChecked} color={isChecked ? 'secondary' : 'primary'}/>

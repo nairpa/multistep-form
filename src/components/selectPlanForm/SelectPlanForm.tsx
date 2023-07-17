@@ -7,7 +7,8 @@ const cards = [
     {
         id: 1,
         img: './assets/images/icon-arcade.svg',
-        title: 'Arcade',
+        label: 'Arcade',
+        value: 'arcade',
         price: {
             yearly: 30,
             monthly: 10,
@@ -16,7 +17,8 @@ const cards = [
     {
         id: 2,
         img: './assets/images/icon-advanced.svg',
-        title: 'Advanced',
+        label: 'Advanced',
+        value: 'advanced',
         price: {
             yearly: 35,
             monthly: 15,
@@ -25,7 +27,8 @@ const cards = [
     {
         id: 3,
         img: './assets/images/icon-pro.svg',
-        title: 'Pro',
+        label: 'Pro',
+        value: 'pro',
         price: {
             yearly: 40,
             monthly: 20,
@@ -54,14 +57,14 @@ export const SelectPlanForm = (props: any) => {
     return (
         <>
             <div className="cards-container flex gap-4">
-                { cards.map(({id, img, title, price}) => <Card 
+                { cards.map(({id, img, label, value, price}) => <Card 
                     key={id} 
                     img={img} 
-                    title={title} 
+                    title={label} 
                     price={getPrice(price)}
                     error={props?.errors['name']?.message} 
-                    id={title.toLowerCase()}
-                    value={title.toLowerCase()} 
+                    id={label.toLowerCase()}
+                    value={value} 
                     {...props.register('plan')} 
                 />)}
             </div>

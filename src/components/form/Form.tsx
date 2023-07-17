@@ -7,8 +7,8 @@ import React, { useState, useEffect } from 'react';
 import { useFormContext } from "../../context/FormContext";
 
 export const Form = ({ children }: React.PropsWithChildren) => {
-    const { register, handleSubmit, watch, formState: { errors }} = useForm({ 
-        mode: 'onSubmit', 
+    const { register, handleSubmit, watch, formState: { errors }, getValues} = useForm({ 
+        mode: 'onChange', 
         defaultValues: { plan: 'arcade' } 
     });
     const { updateForm } = useFormContext();
@@ -76,6 +76,7 @@ export const Form = ({ children }: React.PropsWithChildren) => {
                                     { React.createElement(child.type, {
                                         ...{
                                             ...child.props,
+                                            getValues,
                                             watch,
                                             register: register,
                                             errors: errors,

@@ -6,6 +6,7 @@ const addons = [
         id: 1,
         title: 'Online service',
         description: 'Access to multiplayer games',
+        value: 'onlineService',
         price: {
             monthly: 5,
             yearly: 20
@@ -15,6 +16,7 @@ const addons = [
         id: 2,
         title: 'Larger storage',
         description: 'Extra 1TB cloud save',
+        value: 'largerStorage',
         price: {
             monthly: 5,
             yearly: 20
@@ -24,6 +26,7 @@ const addons = [
         id: 3,
         title: 'Customizable Profile',
         description: 'Custom theme on your profile',
+        value: 'customProfile',
         price: {
             monthly: 5,
             yearly: 20
@@ -52,7 +55,14 @@ export const AddonsForm = (props: any) => {
 
     return (
         <>
-            { addons.map(({id, price, ...rest}) => <CheckCard key={id} price={getPrice(price)} {...rest} />)}
+            { addons.map(({id, price, value, ...rest}) => <CheckCard 
+                key={id} 
+                price={getPrice(price)} 
+                {...rest} 
+                {...props.register('addons')} 
+                id={id} 
+                value={value}  
+            />)}
         </>
     )
 }
