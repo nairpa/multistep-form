@@ -19,9 +19,9 @@ export const SummaryForm = (props: any) => {
     const getTotalPrice = () => {
         let price: number = 0;
         const plan = getSelectedPlan(props.getValues().plan);
-        const addons = props.getValues().addons.map((addon: string) => getSelectedAddons(addon));
+        const addons = props.getValues().addons ? props.getValues().addons.map((addon: string) => getSelectedAddons(addon)) : [];
 
-        if(plan && addons.length) {
+        if(plan && addons) {
             if(props.getValues().yearly) {
                 price += plan.price.yearly;
                 addons.forEach((addon: any) => {
@@ -47,14 +47,14 @@ export const SummaryForm = (props: any) => {
                     <Text bold content={props.getValues().yearly ? `$${getSelectedPlan(props.getValues().plan)?.price.yearly}/yr` : `$${getSelectedPlan(props.getValues().plan)?.price.monthly}/mo`} />
                 </div>
                 <div className="flex flex-col gap-4 pt-4">
-                    { props.getValues().addons.map((addon: any, i:number) => {
+                    { props.getValues().addons ? props.getValues().addons.map((addon: any, i:number) => {
                         return(
                             <div key={i} className="flex justify-between">
                                 <Text content={getSelectedAddons(addon)?.title} color="secondary" />
                                 <Text content={props.getValues().yearly ? `+$${getSelectedAddons(addon)?.price?.yearly}/yr` : `+$${getSelectedAddons(addon)?.price?.monthly}/mo` } />
                             </div>
                         )
-                    })}
+                    }) : <></>}
                 </div>
             </div>
             <div className="p-4 flex justify-between items-center">
