@@ -5,6 +5,7 @@ import { Stepper } from "../stepper/Stepper"
 import { Text } from "../text/Text"
 import React, { useState, useEffect } from 'react';
 import { useFormContext } from "../../context/FormContext";
+import { ConfirmMessage } from "../confirmMessage/ConfirmMessage";
 
 export const Form = ({ children }: React.PropsWithChildren) => {
     const { register, handleSubmit, watch, formState: { errors }, getValues, control, setValue } = useForm({ 
@@ -14,6 +15,7 @@ export const Form = ({ children }: React.PropsWithChildren) => {
     const { updateForm } = useFormContext();
     const [ step, setStep ] = useState(1);
     const [ steps, setSteps ] = useState<IStep[]>([]);
+    const [ showConfirmMessage, setShowConfirmMessage] = useState(false);
 
     useEffect(() => {
         getSteps();
@@ -52,7 +54,7 @@ export const Form = ({ children }: React.PropsWithChildren) => {
     }
 
     const handleConfirm = () => {
-        console.log('confirm')
+        setShowConfirmMessage(true);
     }
 
     const onSubmit = (data: any) => {
@@ -127,7 +129,7 @@ export const Form = ({ children }: React.PropsWithChildren) => {
     return(
         <div className="md:flex md:bg-white md:p-4 gap-4 md:rounded-lg md:shadow-xl">
             <Stepper activeStep={step} steps={steps}/>
-            { activeForm() } 
+            { showConfirmMessage ? <ConfirmMessage /> : activeForm() } 
         </div>
     )
 }

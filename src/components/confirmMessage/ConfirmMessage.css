@@ -1,0 +1,9 @@
+.confirm-container {
+    display: flex;
+    flex-direction: column;
+    width: 570px;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    text-align: center;
+}
