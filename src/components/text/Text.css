@@ -34,3 +34,8 @@ span {
 .light {
     color: var(--base-white);
 }
+
+.isLink {
+    text-decoration: underline;
+    cursor: pointer;
+}

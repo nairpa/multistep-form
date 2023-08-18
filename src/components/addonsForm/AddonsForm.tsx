@@ -1,38 +1,6 @@
 import { useEffect, useState } from "react"
 import { CheckCard } from "../checkCard/CheckCard"
-
-const addons = [
-    {
-        id: 1,
-        title: 'Online service',
-        description: 'Access to multiplayer games',
-        value: 'onlineService',
-        price: {
-            monthly: 5,
-            yearly: 20
-        },
-    },
-    {
-        id: 2,
-        title: 'Larger storage',
-        description: 'Extra 1TB cloud save',
-        value: 'largerStorage',
-        price: {
-            monthly: 5,
-            yearly: 20
-        },
-    },
-    {
-        id: 3,
-        title: 'Customizable Profile',
-        description: 'Custom theme on your profile',
-        value: 'customProfile',
-        price: {
-            monthly: 5,
-            yearly: 20
-        },
-    }
-]
+import { addons } from "../../data/addons";
 
 export const AddonsForm = (props: any) => {
     const[ isYearly, setIsYearly] = useState(false);
@@ -51,7 +19,7 @@ export const AddonsForm = (props: any) => {
         } else {
             return `+${price.monthly}/mo`
         }
-    }
+    }    
 
     return (
         <>

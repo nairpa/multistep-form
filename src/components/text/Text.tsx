@@ -5,11 +5,12 @@ type TextProps = {
     bold?: boolean,
     color?: 'primary' | 'secondary' | 'light' | 'error' | 'accent',
     size?: 'sm' | 'md' | 'lg',
-    customClass?: string
+    customClass?: string,
+    onClick?: (event: any) => void;
 }
 
-export const Text = ({content, size="md", bold, color="primary", customClass=''}: TextProps) => {
+export const Text = ({content, size="md", bold, color="primary", customClass='', onClick}: TextProps) => {
     return (
-        <span className={`${size} ${bold ? 'font-bold' : ''} ${color} ${customClass} leading-5`}>{content}</span>
+        <span className={`${size} ${onClick ? 'isLink' : ''} ${bold ? 'font-bold' : ''} ${color} ${customClass} leading-5`} onClick={onClick}>{content}</span>
     )
 }

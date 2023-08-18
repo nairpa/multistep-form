@@ -2,40 +2,7 @@ import { useEffect, useState } from 'react';
 import { Card } from "../card/Card"
 import { Switch } from "../switch/Switch"
 import "./SelectPlanForm.css";
-
-const cards = [
-    {
-        id: 1,
-        img: './assets/images/icon-arcade.svg',
-        label: 'Arcade',
-        value: 'arcade',
-        price: {
-            yearly: 30,
-            monthly: 10,
-        }
-    },
-    {
-        id: 2,
-        img: './assets/images/icon-advanced.svg',
-        label: 'Advanced',
-        value: 'advanced',
-        price: {
-            yearly: 35,
-            monthly: 15,
-        }
-    },
-    {
-        id: 3,
-        img: './assets/images/icon-pro.svg',
-        label: 'Pro',
-        value: 'pro',
-        price: {
-            yearly: 40,
-            monthly: 20,
-        }
-    }
-
-]
+import { plans } from "../../data/plans";
 
 export const SelectPlanForm = (props: any) => {
     const [ yearly, setYearly] = useState(false);
@@ -57,7 +24,7 @@ export const SelectPlanForm = (props: any) => {
     return (
         <>
             <div className="cards-container flex gap-4">
-                { cards.map(({id, img, label, value, price}) => <Card 
+                { plans.map(({id, img, label, value, price}) => <Card 
                     key={id} 
                     img={img} 
                     title={label} 

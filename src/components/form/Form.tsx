@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 import { useFormContext } from "../../context/FormContext";
 
 export const Form = ({ children }: React.PropsWithChildren) => {
-    const { register, handleSubmit, watch, formState: { errors }, getValues} = useForm({ 
+    const { register, handleSubmit, watch, formState: { errors }, getValues, control, setValue } = useForm({ 
         mode: 'onChange', 
         defaultValues: { plan: 'arcade' } 
     });
@@ -79,8 +79,11 @@ export const Form = ({ children }: React.PropsWithChildren) => {
                                             getValues,
                                             watch,
                                             register: register,
+                                            control: control,
+                                            setValue,
                                             errors: errors,
-                                            key: child.props.id
+                                            key: child.props.id,
+                                            setStep,
                                         }
                                     }) }
                                     { formAction() }
