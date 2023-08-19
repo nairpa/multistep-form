@@ -6,10 +6,12 @@ import { plans } from "../../data/plans";
 
 export const SelectPlanForm = (props: any) => {
     const [ yearly, setYearly] = useState(false);
+    const [ plan, setPlan] = useState('');
 
     useEffect(() => {
         const subscription = props.watch((value: any) => {
-            setYearly(value.yearly)
+            setYearly(value.yearly);
+            setPlan(value.plan)
         })
         return () => subscription.unsubscribe()
     }, [props.watch])
@@ -32,6 +34,7 @@ export const SelectPlanForm = (props: any) => {
                     error={props?.errors['name']?.message} 
                     id={label.toLowerCase()}
                     value={value} 
+                    selected={plan === value}
                     {...props.register('plan')} 
                 />)}
             </div>
