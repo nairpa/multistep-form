@@ -1,6 +1,6 @@
-# Frontend Mentor - Multi-step form solution
+# Frontend Mentor - Multi-step form done with React and Vite.
 
-This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Multi-step form challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/multistep-form-YVAnSdqQBJ). 
 
 ## Table of contents
 
@@ -15,8 +15,6 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
   - [Useful resources](#useful-resources)
 - [Author](#author)
 - [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -36,11 +34,9 @@ Users should be able to:
 
 ![](./assets/images/screenshot.png)
 
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
-
 ### Links
 
-- Solution URL: [github repository](https://your-solution-url.com)
+- Solution URL: [github repository](https://github.com/nairpa/multistep-form)
 - Live Site URL: [link to demo](https://your-live-site-url.com)
 
 ## My process
@@ -51,12 +47,10 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
-- [React-form-hook]() - React hook for form creation
+- [React-form-hook](https://react-hook-form.com/) - React hook for form creation
 - [React](https://reactjs.org/) - JS library
 - [Vite](https://nextjs.org/) - React framework
 - [Tailwind.css](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
 
 ### What I learned
 
@@ -68,5 +62,5 @@ For my future project I would like to design and code a Rest API and its front-e
 
 ## Author
 
-- Github - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Github - [nairpa](https://github.com/nairpa)
+- Frontend Mentor - [@nairpa](https://www.frontendmentor.io/profile/nairpa)
