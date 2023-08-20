@@ -1,7 +1,7 @@
 .stepper {
     height: 568px;
     width: 274px;
-    background-image: url('../../../assets/images/bg-sidebar-desktop.svg');
+    background-image: url('../../../public/assets/images/bg-sidebar-desktop.svg');
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -10,7 +10,7 @@
     .stepper {
         height: 160px;
         width: 100%;
-        background-image: url('../../../assets/images/bg-sidebar-mobile.svg');
+        background-image: url('../../../public/assets/images/bg-sidebar-mobile.svg');
         background-repeat: no-repeat;
         background-size: cover;
         justify-content: center;

@@ -1,7 +1,7 @@
 export const plans = [
     {
         id: 1,
-        img: './assets/images/icon-arcade.svg',
+        img: 'assets/images/icon-arcade.svg',
         label: 'Arcade',
         value: 'arcade',
         price: {
@@ -11,7 +11,7 @@ export const plans = [
     },
     {
         id: 2,
-        img: './assets/images/icon-advanced.svg',
+        img: 'assets/images/icon-advanced.svg',
         label: 'Advanced',
         value: 'advanced',
         price: {
@@ -21,7 +21,7 @@ export const plans = [
     },
     {
         id: 3,
-        img: './assets/images/icon-pro.svg',
+        img: 'assets/images/icon-pro.svg',
         label: 'Pro',
         value: 'pro',
         price: {
