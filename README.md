@@ -37,7 +37,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [github repository](https://github.com/nairpa/multistep-form)
-- Live Site URL: [link to demo](https://your-live-site-url.com)
+- Live Site URL: [link to demo](https://nairpa.github.io/multistep-form/)
 
 ## My process
 
